@@ -1,0 +1,53 @@
+// Define a region of interest (ROI) for Afghanistan
+var roi = ee.Geometry.Rectangle([60.86, 29.38, 74.93, 38.49]); // Replace with the coordinates for Afghanistan
+
+// Define the desired date range
+var startDate = '2022-04-01';
+var endDate = '2022-04-30';
+
+// Filter Sentinel-2 imagery by date and location
+var collection = ee.ImageCollection('COPERNICUS/S2')
+   .filterBounds(roi)
+   .filterDate(startDate, endDate);
+
+// Get the most recent image from the collection
+var image = ee.Image(collection.sort('system:time_start', false).first());
+print(image);
+
+// Display the image on the map
+Map.centerObject(roi, 6);
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], max: 3000}, 'Sentinel-2 Image'); // Use Sentinel-2 bands (B4, B3, B2)
+
+Map.setCenter(68.89, 34.94, 12); // Adjust the coordinates and zoom level as needed
+// Print the image acquisition date
+var acquisitionDate = ee.Date(image.get('system:time_start'));
+print('Image Acquisition Date:', acquisitionDate);
+
+
+
+
+
+// Define a region of interest (ROI) for Afghanistan
+var roi = ee.Geometry.Rectangle([60.86, 29.38, 74.93, 38.49]); // Replace with the coordinates for Afghanistan
+
+// Define the desired date range
+var startDate = '2022-04-01';
+var endDate = '2022-04-30';
+
+// Filter Sentinel-2 imagery by date and location
+var collection = ee.ImageCollection('COPERNICUS/S2')
+   .filterBounds(roi)
+   .filterDate(startDate, endDate);
+
+// Get the most recent image from the collection
+var image = ee.Image(collection.sort('system:time_start', false).first());
+print(image);
+
+// Display the image on the map
+Map.centerObject(roi, 6);
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], max: 3000}, 'Sentinel-2 Image'); // Use Sentinel-2 bands (B4, B3, B2)
+
+Map.setCenter(68.89, 34.94, 12); // Adjust the coordinates and zoom level as needed
+// Print the image acquisition date
+var acquisitionDate = ee.Date(image.get('system:time_start'));
+print('Image Acquisition Date:', acquisitionDate);

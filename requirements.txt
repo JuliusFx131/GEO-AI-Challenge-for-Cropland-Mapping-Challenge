@@ -9,20 +9,3 @@ import optuna
 import reverse_geocoder as rg
 import ee
 
-modules = [sklearn, geopandas, pd, folium, geopy, xgboost, lightgbm, optuna, rg, ee]
-
-for module in modules:
-    print(f"{module.__name__}: {module.__version__}")
-
-
-To install these versions you can run on jupyter notebook the following codes
-#took approximately 5 minutes to install these versions
-!pip install scikit-learn==1.3.1
-!pip install geopandas==0.13.2
-!pip install pandas==1.5.3
-!pip install folium==0.14.0
-!pip install geopy==2.4.0
-!pip install xgboost==1.7.5
-!pip install lightgbm==3.3.5
-!pip install optuna==3.2.0
-!pip install earthengine-api==0.1.368

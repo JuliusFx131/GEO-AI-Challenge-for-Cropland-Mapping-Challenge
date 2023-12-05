@@ -1,4 +1,7 @@
-This helped me get additional (longitude,latitudes) 500 points (250 croplands, 350 non croplands). This aimed to bolster performance of model on the data. You need to create account and a project under google earth to check it out. Once you have done so, proceed to use this code on the console and run. 
+This helped me get additional (longitude,latitudes) 500 points (250 croplands, 350 non croplands). 
+This aimed to bolster performance of model on the data. 
+You need to create account and a project under google earth to check it out. 
+Once you have done so, proceed to use this code on the console and run. 
 
 // Define a region of interest (ROI) for Afghanistan
 var roi = ee.Geometry.Rectangle([60.86, 29.38, 74.93, 38.49]); // Replace with the coordinates for Afghanistan
